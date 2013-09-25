@@ -5,7 +5,6 @@
 * printed forms (ranking)
 * Sound System, music
 * Judging Table
-* 
 
 ## People needed
 * Chief Judge
@@ -14,6 +13,7 @@
 * Evaluation Team (at least 2 People)
 
 ## Stuff to do before the competition
+* Initial preparation for the first round - divide groups, set judges
 
 ## Stuff to do before each round
 * divide the competitiors into groups
