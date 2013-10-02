@@ -4,6 +4,7 @@ Competitors only care about skills. The system finds at least the best 3 riders.
 Every competitor has a two minute run. The rider shows his skills during this time. A DJ is playing music for each run. Riders can also hand in their own music.
 ## Starting Groups
 The group of competing riders gets split into random starting groups of about the same size with maximum 10 riders. There can be two distinct tournaments for junior (age less than 15) and senior (age 15 and older) riders. If there are obvious critical groups (e.g. all the best riders in one group), the chief judge is allowed to modify the groups.
+The host can decide to order the riders by age and then split them into starting groups. The host is also allowed to hand out awards to intermediate winners. This can be motivating for younger/weaker riders.
 ## Tournament
 The best 3 riders of each group advance to the next round, forming a new pool of competitors. This pool again gets split into starting groups and the next round begins.
 ## Judges
