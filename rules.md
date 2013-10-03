@@ -37,6 +37,7 @@ There is no special judging form.
 Every jugde gets a blank sheet of paper and can use any system he/she wants to create the order.
 The only restriction is to not take any negative aspect into account (for example dismounts).
 Only fully landed skills count.
+A skill is fully landed when the rider reaches a stable position during the skill.
 All the placing points get summed up for each rider.
 The 3 riders with the fewest points win and advance to the next round.
 If there is only one group left, it gets judged by a group of riders from the last round.
