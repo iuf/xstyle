@@ -24,9 +24,8 @@ This pool again gets split into starting groups and the next round begins.
 
 ## Judges
 All judges can be active competitors or non-competitors.
-Preferred are competitors and people with judging experience.
-Every starting group gets judged by another starting group.
-If there is only one group, it can be split to have two groups.
+Preferred are people with judging experience and competitors.
+It is recommended that every starting group gets judged by another starting group.
 The judging table consists of at least 5 Judges.
 
 ## Judging
