@@ -19,6 +19,7 @@ This can be motivating for younger/weaker riders.
 
 ## Tournament
 The best 3 riders of each group advance to the next round, forming a new pool of competitors.
+If there is a tie on one of the first 3 places which extends to more than the 3 riders, all riders involved in this tie advance.
 This pool again gets split into starting groups and the next round begins.
 
 ## Judges
