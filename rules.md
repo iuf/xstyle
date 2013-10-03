@@ -32,14 +32,18 @@ The judging table consists of at least 5 Judges.
 Every routine is judged by the judging table.
 One judging table stays for one starting group.
 Judges can judge alone or in pairs.
-The only thing a judge has to do, is to bring the riders of the current starting group in order.
-There is no special judging form.
-Every jugde gets a blank sheet of paper and can use any system he/she wants to create the order.
-The only restriction is to not take any negative aspect into account (for example dismounts).
-Only fully landed skills count.
-A skill is fully landed when the rider reaches a stable position during the skill.
+The judge has to bring the riders of the current starting group in order by judging the difficulty of the shown skills.
+
+Only mastered skills count. A skill is mastered when the rider reached the point of beeing in control.
+
+Examples:
+
+* The landing of a unispin is part of the skill. The rider can only reach the point of beeing in control after landing.
+* In coasting, the rider is in control, after getting far enough. Getting back to pedals is a separate difficulty. The same applies for other riding skills.
+
+Negative aspects like dismounts are ignored. Every judge can use blank sheets of paper to take notes.
+
 All the placing points get summed up for each rider.
 The 3 riders with the fewest points win and advance to the next round.
-If there is only one group left, it gets judged by a group of riders from the last round.
 
 TODO: Post-Processing: Streichwertung, Judge-Gruppen-Meinung, Sache des Chief Judges
