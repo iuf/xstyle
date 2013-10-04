@@ -51,7 +51,7 @@ Examples:
 Negative aspects like dismounts are ignored.
 Every judge can use blank sheets of paper to take notes.
 
-All the placing points get summed up for each rider.
+The highest and the lowest placing points per rider are discarded.
+All the remaining placing points get summed up for each rider.
 The 3 riders with the fewest points win and advance to the next round.
 
-TODO: Post-Processing: Streichwertung, Judge-Gruppen-Meinung, Sache des Chief Judges
