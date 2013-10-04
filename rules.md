@@ -25,8 +25,11 @@ The final round consists of only one starting group.
 In the final round the best 3 riders are awarded for the first, second and third place of the competition.
 
 ## Judges
+The Chief Judge composes the Judging Table for each starting group.
 All judges can be active competitors or non-competitors.
 Preferred are people with judging experience and competitors.
+Non-Competitors can apply for beeing a judge by contacting the Chief Judge in advance.
+The Chief Judge sets the application deadline.
 It is recommended that every starting group gets judged by another starting group.
 The judging table consists of at least 5 Judges.
 
@@ -34,6 +37,7 @@ The judging table consists of at least 5 Judges.
 Every routine is judged by the judging table.
 One judging table stays for one starting group.
 Judges can judge alone or in pairs.
+Pair judges are referred to as one judge.
 The judge has to bring the riders of the current starting group in order by judging the difficulty of the shown skills.
 
 Only mastered skills are taken into account.
