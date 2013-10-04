@@ -21,6 +21,8 @@ This can be motivating for younger riders.
 The best 3 riders of each group advance to the next round, forming a new pool of competitors.
 If there is a tie on one of the first 3 places which extends to more than the 3 riders, all involved riders advance.
 This pool again gets split into starting groups and the next round begins.
+The final round consists of only one starting group.
+In the final round the best 3 riders are awarded for the first, second and third place of the competition.
 
 ## Judges
 All judges can be active competitors or non-competitors.
