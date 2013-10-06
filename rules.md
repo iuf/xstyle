@@ -8,6 +8,8 @@ The rider shows his/her skills during this time.
 A DJ is playing music for each run.
 After 2 minutes the DJ waits until the current skill is finished and stops the music. 
 Riders can also hand in their own music.
+Riders can request a time notification before their run from the DJ.
+The DJ then gives a signal after one minute passed.
 
 ## Starting Groups
 The group of competing riders is split into random starting groups of about the same size with maximum 10 riders.
