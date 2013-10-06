@@ -16,12 +16,12 @@ object Main extends SimpleSwingApplication {
       Array("10", "Till"),
       Array("11", "Felix")
     )
-    def ridersTable = new Table(rowData = riders.toArray, columnNames=Seq("ID", "Name"))
+    /*def ridersTable = new Table(rowData = riders.toArray, columnNames=Seq("ID", "Name"))
     contents = new BoxPanel(Orientation.Vertical) {
       contents += new ActionButton("Add Rider", riders = (riders.toList ::: List("13","gossi")).toArray) {
 
       }
       contents += ridersTable
-    }
+    }*/
   }
 }
