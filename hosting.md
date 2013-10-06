@@ -66,3 +66,5 @@ Important: Don't forget to discard the best and worst rank per rider.
 ## Things to do after the competition
 * **Moderator:** Award the 3 winners
 
+## Hints
+* Begin with the biggest starting groups to be able to add new competitiors spontaneously in the later smaller groups.
