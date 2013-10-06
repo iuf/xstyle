@@ -42,6 +42,7 @@ One judging table stays for one starting group.
 Judges can judge alone or in pairs.
 Pair judges are referred to as one judge.
 The judge has to bring the riders of the current starting group in order by judging the difficulty of the shown skills.
+Assigning one rank to multiple riders is allowed.
 
 Only mastered skills are taken into account.
 A skill is mastered when the rider reached the point of beeing in control.
