@@ -4,11 +4,20 @@ import collection.mutable
 import scala.concurrent.duration._
 
 object Constants {
-  val lengthOfRun          = Duration( 2, MINUTES)
-  val timePerRun           = Duration( 1, MINUTES)
-  val timePerGroup         = Duration(15, MINUTES)
-  val timePerRound         = Duration(20, MINUTES)
-  val timePerCompetition   = Duration(20, MINUTES)
+  val timeBeforeCompetition  = Duration( 0, MINUTES)
+  val timeBeforeRound        = Duration(10, MINUTES)
+  val timeBeforeGroup        = Duration( 5, MINUTES)
+  val timeBeforeRun          = Duration( 0, MINUTES)
+  val lengthOfRun            = Duration( 2, MINUTES)
+  val timeAfterRun           = Duration( 1, MINUTES)
+  val timeAfterGroup         = Duration(5, MINUTES)
+  val timeAfterRound         = Duration(5, MINUTES)
+  val timeAfterCompetition   = Duration(20, MINUTES)
+
+  val timePerCompetition = timeBeforeCompetition       + timeAfterCompetition
+  val timePerRound       = timeBeforeRound             + timeAfterRound
+  val timePerGroup       = timeBeforeGroup             + timeAfterGroup
+  val timePerRun         = timeBeforeRun + lengthOfRun + timeAfterRun
 
   val maxGroupSize         = 10
   val advancingRiderCount  = 3
@@ -109,8 +118,9 @@ case class AbstractRound(competitorCount:Int) {
   def totalTimeNeeded = timePerCompetition +
     timePerRound * totalRoundCount +
     timePerGroup * totalGroupCount +
-    (timePerRun + lengthOfRun) * totalRunCount
+    timePerRun * totalRunCount
+
   def timeNeeded = timePerRound +
     timePerGroup * groupCount +
-    (timePerRun + lengthOfRun) * runCount
+    timePerRun * runCount
 }
