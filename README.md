@@ -1,5 +1,5 @@
 # X-Style
 
-* Current rules: **rules.md**
-* Hosting a X-Style competition: **hosting.md**
-* Judging Guide: **judging-guide.md**
+* [The Rules](rules.md)
+* [Help Hosting a X-Style competition](hosting.md)
+* [Judging Guide](judging-guide.md)
