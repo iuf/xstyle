@@ -49,8 +49,11 @@ A skill is mastered when the rider reached the point of beeing in control.
 
 Examples:
 
-* The landing of a unispin is part of the skill. The rider can only reach the point of beeing in control after landing.
-* In coasting, the rider is in control after getting far enough. Getting back to pedals is a separate skill.
+* The landing of a unispin is part of the skill.
+The rider can only reach the point of beeing in control after landing.
+If the rider is hopping 4 times without control and then falls off the unicycle, the skill does not count.
+* In coasting, the rider is in control after getting far enough.
+Getting back to pedals is a separate skill.
 
 Negative aspects like dismounts are ignored.
 Every judge can use blank sheets of paper to take notes.
