@@ -6,6 +6,7 @@ The system finds at least the best 3 riders.
 Every competitor has a 2 minute run.
 The rider shows his/her skills during this time.
 A DJ is playing music for each run.
+After 2 minutes the DJ waits until the current skill is finished and stops the music. 
 Riders can also hand in their own music.
 
 ## Starting Groups
