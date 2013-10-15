@@ -60,13 +60,13 @@ It is recommended to let them stay on the ground or benches around the riding ar
 * If possible, the next starting group can begin at this point.
 * **Evaluation team:** calculate ranking scores und write down the advancing riders
 Important: Don't forget to discard the best and worst rank per rider.
-* **Host:** Detailed Judging decisions can be published.
 
 ## Things to do after each round
 * **Moderator:** Announce advancing competitors
 
 ## Things to do after the competition
 * **Moderator:** Award the 3 winners
+* **Host:** Detailed Judging decisions can be published.
 
 ## Hints
 * Begin with the biggest starting groups to be able to add new competitiors spontaneously in the later smaller groups.
