@@ -62,6 +62,7 @@ It is recommended to let them stay on the ground or benches around the riding ar
 Important: Don't forget to discard the best and worst rank per rider.
 
 ## Things to do after each round
+* **Evaluation team:** Calculate advancing competitors
 * **Moderator:** Announce advancing competitors
 
 ## Things to do after the competition
