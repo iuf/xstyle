@@ -10,8 +10,8 @@ object Constants {
   val timeBeforeRun          = Duration( 0, MINUTES)
   val lengthOfRun            = Duration( 2, MINUTES)
   val timeAfterRun           = Duration( 1, MINUTES)
-  val timeAfterGroup         = Duration(5, MINUTES)
-  val timeAfterRound         = Duration(5, MINUTES)
+  val timeAfterGroup         = Duration( 5, MINUTES)
+  val timeAfterRound         = Duration(15, MINUTES)
   val timeAfterCompetition   = Duration(20, MINUTES)
 
   val timePerCompetition = timeBeforeCompetition       + timeAfterCompetition
