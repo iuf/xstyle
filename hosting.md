@@ -23,13 +23,14 @@
 * Time per competition (intro, award winners) = 20 Min
 
 ## Things to do before the competition
+* **Chief Judge:** Brief judges (announced as workshop before the competition)
 * **Chief Judge:** Accept non-competitor judges
 * **Chief Judge:** Initial preparation for the first round: divide people into starting groups, select judges
 * **Host:** Decide where the riders sit.
 It is recommended to let them stay on the ground or benches around the riding area.
 
 ## Things to do before each round
-* **Chief Judge:** Nominates Judges for each starting group
+* **Chief Judge:** Nominates judges for each starting group
 * **Chief Judge:** Divide the competitiors into starting groups
 * **Moderator:** Announce competitiors in each group
 * **Moderator:** Name and announce judges for each group
