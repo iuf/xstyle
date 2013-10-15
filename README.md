@@ -11,4 +11,4 @@ Have a look at the [Rules](rules.md).
 
 If you want to host a X-Style competiton have a look at [Hosting](hosting.md).
 
-Helpfil advices and and tips for judges can be found in the [Judging Guide](judging-guide.md).
+Helpful advices and and tips for judges can be found in the [Judging Guide](judging-guide.md).
