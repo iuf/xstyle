@@ -29,6 +29,7 @@
 It is recommended to let them stay on the ground or benches around the riding area.
 
 ## Things to do before each round
+* **Chief Judge:** Nominates Judges for each starting group
 * **Chief Judge:** Divide the competitiors into starting groups
 * **Moderator:** Announce competitiors in each group
 * **Moderator:** Name and announce judges for each group
