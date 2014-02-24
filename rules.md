@@ -62,3 +62,6 @@ The highest and the lowest placing points per rider are discarded.
 All the remaining placing points get summed up for each rider.
 The 3 riders with the fewest points win and advance to the next round.
 
+## Latest Rules
+The latest version can be found here: https://github.com/iuf/xstyle/blob/master/rules.md
+
