@@ -21,10 +21,17 @@ object Constants {
 
   val maxGroupSize         = 10
   val advancingRiderCount  = 3
-  val judgingGroupShift    = 2
+  
+  val judgingGroupCount    = 2
 }
 
 import Constants._
+
+object Helpers {
+  def rotate[T](xs:Iterable[T], delta:Int) = xs.drop(delta % xs.size) ++ xs.take(delta % xs.size)
+}
+
+import Helpers._
 
 object Rider {
   var currentId = 0
@@ -92,6 +99,8 @@ case class AbstractRound(competitorCount:Int) {
 
   def groupCount = divCeil(competitorCount, maxGroupSize)
   def runCount = competitorCount
+  
+  def isFinalRound = groupCount == 1
 
   def freePlaces = maxGroupSize - (competitorCount % maxGroupSize)
   def smallGroupCount = freePlaces % groupCount
@@ -109,6 +118,16 @@ case class AbstractRound(competitorCount:Int) {
   def next = {
     require(groupSizes.forall( _ >= advancingRiderCount))
     AbstractRound(groupCount * advancingRiderCount)
+  }
+  
+  //def canBeRunInParallel = competitorCount >= (judgingGroupShift + 1) * 2
+  def judgesForGroup(groupId:Int, parallel:Boolean):List[Int] = {
+    val optimalShift = groupCount / 2 - judgingGroupCount / 2
+    if( parallel ){ ???}
+    else {
+      if( isFinalRound ) Nil
+      ??? // find optimal group shift
+    }
   }
 
   def totalRoundCount:Int = 1 + (if( groupCount > 1 ) next.totalRoundCount else 0)
