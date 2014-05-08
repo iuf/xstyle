@@ -4,16 +4,38 @@ import org.scalatest.FunSuite
 
 class LibXstyle extends FunSuite {
 
-  val ra = Rider(1,"a")
-  val rb = Rider(2,"b")
-  val rc = Rider(3,"c")
-  val rd = Rider(4,"d")
-  val re = Rider(5,"e")
     
-  val comp = Competition(riders = List(ra, rb, rc, rd, re))
 
-  test("advancing") {
-    val group = StartingGroup(comp.riders)
+  val riders = (0 until 100).map(i => Rider(i, s"Rider$i")).toList
+  
+  val ra = riders(0)
+  val rb = riders(1)
+  val rc = riders(2)
+  val rd = riders(3)
+  val re = riders(4)
+
+  test("Round: generate StartingGroups 5") {
+    val groups = Round(riders.take(5)).randomStartingGroups
+    assert(groups.map(_.riders.size).sorted === List(5))
+  }
+
+  test("Round: generate StartingGroups 20") {
+    val groups = Round(riders.take(20)).randomStartingGroups
+    assert(groups.map(_.riders.size).sorted === List(10,10))
+  }
+  
+  test("Round: generate StartingGroups 11") {
+    val groups = Round(riders.take(11)).randomStartingGroups
+    assert(groups.map(_.riders.size).sorted === List(5,6))
+  }
+
+  test("Round: generate StartingGroups 21") {
+    val groups = Round(riders.take(21)).randomStartingGroups
+    assert(groups.map(_.riders.size).sorted === List(7,7,7))
+  }
+
+  test("StartingGroup: advancing") {
+    val group = StartingGroup(riders.take(5))
     val advanced = group.advancingRiders(
       judges = List("x"),
       judgingSheets=List(
@@ -26,11 +48,11 @@ class LibXstyle extends FunSuite {
             Placement(re,rank=5)
     ))))
 
-    assert( advanced.toSet == Set(rd, ra, rb) )
+    assert( advanced.toSet === Set(rd, ra, rb) )
   }
 
-  test("ties") {
-    val group = StartingGroup(comp.riders)
+  test("StartingGroup: ties") {
+    val group = StartingGroup(riders.take(5))
     val advanced = group.advancingRiders(
       judges = List("x", "y"),
       List(
@@ -52,6 +74,10 @@ class LibXstyle extends FunSuite {
           ))
       ))
 
-    assert( advanced.toSet == Set(ra, rb, rc, rd) )
+    assert( advanced.toSet === Set(ra, rb, rc, rd) )
+  }
+
+  test("Round: assign judges") {
+    val round = Round(riders.take(11))
   }
 }
