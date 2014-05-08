@@ -2,11 +2,11 @@ name := "XStyle"
 
 version := "0.1"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.10.4"
 
 libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "1.9.1" % "test",
-  "org.scala-lang" % "scala-swing" % "2.10.3"
+  "org.scalatest" %% "scalatest" % "1.9.1" % "test"
+  //"org.scala-lang" % "scala-swing" % "2.10.4"
 )
 
 resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"

@@ -3,75 +3,10 @@ package xstyle.libxstyle
 import collection.mutable
 import scala.concurrent.duration._
 
-object Constants {
-  val timeBeforeCompetition  = Duration( 0, MINUTES)
-  val timeBeforeRound        = Duration(10, MINUTES)
-  val timeBeforeGroup        = Duration( 5, MINUTES)
-  val timeBeforeRun          = Duration( 0, MINUTES)
-  val lengthOfRun            = Duration( 2, MINUTES)
-  val timeAfterRun           = Duration( 1, MINUTES)
-  val timeAfterGroup         = Duration( 5, MINUTES)
-  val timeAfterRound         = Duration(15, MINUTES)
-  val timeAfterCompetition   = Duration(20, MINUTES)
-
-  val timePerCompetition = timeBeforeCompetition       + timeAfterCompetition
-  val timePerRound       = timeBeforeRound             + timeAfterRound
-  val timePerGroup       = timeBeforeGroup             + timeAfterGroup
-  val timePerRun         = timeBeforeRun + lengthOfRun + timeAfterRun
-
-  val maxGroupSize         = 10
-  val advancingRiderCount  = 3
-  
-  val judgingGroupCount    = 2
-}
-
 import Constants._
 
-object Helpers {
-  def rotate[T](xs:Iterable[T], delta:Int) = xs.drop(delta % xs.size) ++ xs.take(delta % xs.size)
-}
 
 import Helpers._
-
-object Rider {
-  var currentId = 0
-  def nextAutoId() = {currentId += 1; currentId}
-  def apply(name:String):Rider = Rider(nextAutoId(), name)
-}
-case class Rider(id:Int, name:String)
-
-case class Competition(riders:List[Rider]) {
-  require(riders.map(_.id).toSet.size == riders.size, "Some riders have duplicate IDs")
-  val riderLookup:Map[Int,Rider] = riders.map{case r@Rider(id, name) => (id -> r)}.toMap
-  def rider(id:Int) = riderLookup(id)
-
-  def toRound = Round(riders)
-}
-
-case class StartingGroup(riders:List[Rider]) {
-  def advancingRiders(judges:List[String], judgingSheets:List[JudgingSheet]):List[Rider] = {
-    judgingSheets.foreach{ sheet =>
-      require(judges contains sheet.judge)
-      require(riders.size == sheet.placements.size)
-      require(riders.toSet == sheet.placements.map(_.rider).toSet)
-    }
-
-    val scores = new mutable.Map.WithDefault( new mutable.HashMap[Rider,Int], (k:Rider) => 0 )
-    for( sheet <- judgingSheets )
-      for( placement <- sheet.placements )
-        scores(placement.rider) += placement.rank
-
-    var advancing = scores.toList.sortBy(_._2).take(advancingRiderCount)
-    val ties = scores.toList.filter(advancing.map(_._2) contains _._2)
-    (advancing ::: ties).map(_._1)
-  }
-}
-
-case class Placement(rider:Rider, rank:Int)
-
-case class JudgingSheet(judge:String, placements:List[Placement]) {
-  require( placements.map(_.rank).toSet == Range.inclusive(1,placements.size).toSet )
-}
 
 case class Round(riders:List[Rider]) {
   def randomStartingGroups:List[StartingGroup] = {
@@ -115,7 +50,7 @@ case class AbstractRound(competitorCount:Int) {
   assert( (competitorCount > maxGroupSize) == (groupCount > 1) )
   assert( if( groupCount > 1 ) smallGroupSize >= maxGroupSize / 2 else true,  this)
 
-  def next = {
+  def next= {
     require(groupSizes.forall( _ >= advancingRiderCount))
     AbstractRound(groupCount * advancingRiderCount)
   }
