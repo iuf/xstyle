@@ -56,13 +56,11 @@ case class AbstractRound(competitorCount:Int) {
   }
   
   //def canBeRunInParallel = competitorCount >= (judgingGroupShift + 1) * 2
-  def judgesForGroup(groupId:Int, parallel:Boolean):List[Int] = {
-    val optimalShift = groupCount / 2 - judgingGroupCount / 2
-    if( parallel ){ ???}
-    else {
-      if( isFinalRound ) Nil
-      ??? // find optimal group shift
-    }
+  def judgingShift = divFloor(groupCount,2) - divCeil(judgingGroupCount,2)
+  def judgesForGroup:List[List[Int]] = {
+    if( isFinalRound ) Nil
+    repeat(rotate((0 until groupCount), judgingShift),2).toList.sliding(judgingGroupCount).take(groupCount).toList
+    // find optimal group shift
   }
 
   def totalRoundCount:Int = 1 + (if( groupCount > 1 ) next.totalRoundCount else 0)

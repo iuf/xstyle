@@ -78,6 +78,7 @@ class LibXstyle extends FunSuite {
   }
 
   test("Round: assign judges") {
-    val round = Round(riders.take(11))
+    val round = new AbstractRound(90)
+      
   }
 }
