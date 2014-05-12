@@ -29,9 +29,6 @@ case class AbstractRound(competitorCount:Int) {
   require( advancingRiderCount <= maxGroupSize/2 )
   require( competitorCount >= advancingRiderCount, s"Not enough competitors. Need at least $advancingRiderCount." )
 
-  private def divFloor(a:Int, b:Int) = a / b
-  private def divCeil(a:Int, b:Int) = if(a % b == 0) a / b else (a + ( b - (a % b) )) / b
-
   def groupCount = divCeil(competitorCount, maxGroupSize)
   def runCount = competitorCount
   
