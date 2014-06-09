@@ -8,24 +8,29 @@ import Constants._
 
 import Helpers._
 
-case class Round(riders:List[Rider]) {
+case class Round(riders:List[Rider]) extends AbstractRound(riders.size) {
   def randomStartingGroups:List[StartingGroup] = {
     def randomRiders = util.Random.shuffle(riders)
     val abstractRound = AbstractRound(riders.size)
     //TODO: StartingGroups sorted by age
     var ridersLeft = randomRiders
     var groups:List[StartingGroup] = Nil
-    for( groupSize <- abstractRound.groupSizes ) {
-      groups ::= StartingGroup(ridersLeft take groupSize)
+    for( (groupSize,i) <- abstractRound.groupSizes.zipWithIndex ) {
+      groups :+= StartingGroup(i, ridersLeft take groupSize)
       ridersLeft = ridersLeft drop groupSize
     }
     assert(ridersLeft == Nil)
     assert(abstractRound.groupSizes.sorted == groups.map(_.riders.size).sorted)
     groups
   }
+
+  override def toString = s"Round(${riders.size} riders, ${groupCount} groups)"
 }
 
-case class AbstractRound(competitorCount:Int) {
+object AbstractRound {
+  def apply(n:Int) = new AbstractRound(n)
+}
+class AbstractRound(val competitorCount:Int) {
   require( advancingRiderCount <= maxGroupSize/2 )
   require( competitorCount >= advancingRiderCount, s"Not enough competitors. Need at least $advancingRiderCount." )
 
@@ -47,10 +52,12 @@ case class AbstractRound(competitorCount:Int) {
   assert( (competitorCount > maxGroupSize) == (groupCount > 1) )
   assert( if( groupCount > 1 ) smallGroupSize >= maxGroupSize / 2 else true,  this)
 
-  def next= {
+  def next = {
     require(groupSizes.forall( _ >= advancingRiderCount))
     AbstractRound(groupCount * advancingRiderCount)
   }
+
+ def judgingAssignment = maxDistancePairJudgingSlidingRotate(0 until groupCount)
   
   //def canBeRunInParallel = competitorCount >= (judgingGroupShift + 1) * 2
 

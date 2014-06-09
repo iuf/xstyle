@@ -1,12 +1,10 @@
 package xstyle.libxstyle
 
 import org.scalatest.FunSuite
+import Helpers._
 
 class LibXstyle extends FunSuite {
-
-    
-
-  val riders = (0 until 100).map(i => Rider(i, s"Rider$i")).toList
+  val riders = fakeRiders(100)
   
   val ra = riders(0)
   val rb = riders(1)
@@ -79,6 +77,6 @@ class LibXstyle extends FunSuite {
 
   test("Round: assign judges") {
     val round = new AbstractRound(90)
-      
+      //assert(false)
   }
 }

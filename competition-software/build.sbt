@@ -25,3 +25,9 @@ scalacOptions ++= Seq(
 
 // faster incremental compilation
 incOptions := incOptions.value.withNameHashing(true)
+
+initialCommands in console := """
+import xstyle.libxstyle.Helpers._
+import xstyle.libxstyle._
+import xstyle.simulation._
+"""

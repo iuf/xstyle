@@ -68,10 +68,11 @@ class HelpersTest extends FunSuite {
   
   val distances = Array(-1, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4)
   for(n <- 3 to 10) {
-    test(s"maxDistanceDeltaForPairJudging n=$n") {
+    test(s"maxDistanceDeltaPairJudging n=$n") {
       assert(maxDistanceDeltaForPairJudging(n) == distances(n))
-      assert(minDist(maxDistanceForPairJudgingSlidingRotate(0 until n)) == distances(n),
-        maxDistanceForPairJudgingSlidingRotate(0 until n))
+      assert(minDist(maxDistancePairJudgingSlidingRotate(0 until n)) == distances(n),
+        maxDistancePairJudgingSlidingRotate(0 until n).toString
+      )
     }
   }
 }

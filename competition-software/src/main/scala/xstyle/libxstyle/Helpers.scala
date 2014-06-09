@@ -22,8 +22,11 @@ object Helpers {
   }
 
    
-  def maxDistanceForPairJudgingSlidingRotate[T](xs:Iterable[T]) = {
+  def maxDistancePairJudgingSlidingRotate[T](xs:Iterable[T]) = {
     val delta = maxDistanceDeltaForPairJudging(xs.size)
     slidingRotate(xs, delta, 2)
   }
+
+  def fakeRiders(n:Int) = List.tabulate(n)(i => Rider(i, s"R$i"))
+
 }
