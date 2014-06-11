@@ -3,6 +3,8 @@ package xstyle.gui
 //import scala.swing._
 //import scala.swing.event._
 
+import xstyle.libxstyle._
+import Helpers._
 import xstyle.simulation._
 
 //class ActionButton(title:String, action: => Unit) extends Button(title) {
@@ -12,8 +14,19 @@ import xstyle.simulation._
 //}
 
 object Main extends App {//SimpleSwingApplication {
-  val s = new Simulation(50, parallel = false)
-  println(s.toString)
+  /* val s = new Simulation(50, parallel = false) */
+  /* println(s.toString) */
+
+  val riders = readRiders("riders")
+  val round = Round(riders)
+  for( group <- round.randomStartingGroups ) {
+    println(s"Starting group ${group.id+1} (judged by groups ${round.judgingAssignment(group.id).map(_+1).mkString(",")}):")
+    println(group.riders.map(_.name).mkString("  ", "\n  ", ""))
+    println()
+  }
+
+  println(s"judging:\n${round.judgingAssignment.zipWithIndex.map{case (judges,group) => s"  Group ${group+1} judged by groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n")
+  
 
   //[>def top = new MainFrame {
     //title = "XStyle"
