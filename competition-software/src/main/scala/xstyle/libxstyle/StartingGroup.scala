@@ -6,6 +6,7 @@ import Constants._
 object StartingGroup {
   def apply(riders:List[Rider]) = new StartingGroup(0,riders)
 }
+
 case class StartingGroup(id:Int, riders:List[Rider]) {
   def advancingRiders(judges:List[String], judgingSheets:List[JudgingSheet]):List[Rider] = {
     judgingSheets.foreach{ sheet =>
