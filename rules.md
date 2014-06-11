@@ -1,4 +1,4 @@
-# X-Style Rules
+f# X-Style Rules
 Competitors only care about skills.
 The system finds at least the best 3 riders.
 
@@ -31,7 +31,7 @@ In the final round the best 3 riders are awarded for the first, second and third
 The Chief Judge composes the Judging Table for each starting group.
 All judges can be active competitors or non-competitors.
 Preferred are people with judging experience and competitors.
-Non-Competitors can apply for beeing a judge by contacting the Chief Judge in advance.
+Non-Competitors can apply for being a judge by contacting the Chief Judge in advance.
 The Chief Judge sets the application deadline.
 It is recommended that every starting group gets judged by another starting group.
 The judging table consists of at least 5 Judges.
@@ -40,17 +40,20 @@ The judging table consists of at least 5 Judges.
 Every routine is judged by the judging table.
 One judging table stays for one starting group.
 Judges can judge alone or in pairs.
-Pair judges are referred to as one judge.
-The judge has to bring the riders of the current starting group in order by judging the difficulty of the shown skills.
+Judging in pairs is the preferred system.
+All judges must either judge alone or in pairs so that each judge's vote has equal weight.
+(Pair judges are referred to as one judge below.)
+The judge should rank the riders of the current starting group in order.
+They should do this by comparing the difficulty of the shown skills.
 Assigning one rank to multiple riders is allowed.
 
-Only mastered skills are taken into account.
-A skill is mastered when the rider reached the point of beeing in control.
+Only executed skills are taken into account.
+An executed skill is defined as when the rider reaches the point of being in control.
 
 Examples:
 
 * The landing of a unispin is part of the skill.
-The rider can only reach the point of beeing in control after landing.
+The rider can only reach the point of being in control after landing.
 If the rider is hopping 4 times without control and then falls off the unicycle, the skill does not count.
 * In coasting, the rider is in control after getting far enough.
 Getting back to pedals is a separate skill.
