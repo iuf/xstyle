@@ -1,4 +1,4 @@
-f# X-Style Rules
+# X-Style Rules
 Competitors only care about skills.
 The system finds at least the best 3 riders.
 
