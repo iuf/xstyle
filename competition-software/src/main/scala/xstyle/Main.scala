@@ -14,9 +14,6 @@ import xstyle.simulation._
 //}
 
 object Main extends App {//SimpleSwingApplication {
-  /* val s = new Simulation(50, parallel = false) */
-  /* println(s.toString) */
-
   val riders = readRiders("riders")
   val round = Round(riders)
   for( group <- round.randomStartingGroups ) {
@@ -26,7 +23,13 @@ object Main extends App {//SimpleSwingApplication {
   }
 
   println(s"judging:\n${round.judgingAssignment.zipWithIndex.map{case (judges,group) => s"  Group ${group+1} judged by groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n")
-  
+
+
+
+
+  val s = new Simulation(riders.size, parallel = false)
+  println(s.toString)
+
 
   //[>def top = new MainFrame {
     //title = "XStyle"
