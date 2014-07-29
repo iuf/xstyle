@@ -36,8 +36,8 @@ class Simulation(competitorCount:Int, parallel:Boolean = true) {
       sb ++= s"  competitors: ${round.competitorCount}\n"
       sb ++= s"  groups:      ${round.groupCount}\n"
       sb ++= s"  group sizes: ${occurrences(round.groupSizes).map{ case (number, count) => s"${count}x${number} riders"}.mkString(", ")}\n"
-      sb ++= s"  judging:\n${round.judgingAssignment.zipWithIndex.map{case (judges,group) => s"    Group ${group+1} judged by groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n"
       sb ++= s"  total time:  ${prettyDuration(round.timeNeeded)}\n"
+      sb ++= s"  judging:\n${round.judgingAssignment.zipWithIndex.map{case (judges,group) => s"    Group ${group+1} judged by groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n"
 
       for( (groupSize, group) <- round.groupSizes zipWithIndex ) {
         time += timeBeforeGroup
