@@ -5,7 +5,7 @@ import Helpers._
 
 class LibXstyle extends FunSuite {
   val riders = fakeRiders(100)
-  
+
   val ra = riders(0)
   val rb = riders(1)
   val rc = riders(2)
@@ -21,7 +21,7 @@ class LibXstyle extends FunSuite {
     val groups = Round(riders.take(20)).randomStartingGroups
     assert(groups.map(_.riders.size).sorted === List(10,10))
   }
-  
+
   test("Round: generate StartingGroups 11") {
     val groups = Round(riders.take(11)).randomStartingGroups
     assert(groups.map(_.riders.size).sorted === List(5,6))
@@ -76,7 +76,22 @@ class LibXstyle extends FunSuite {
   }
 
   test("Round: assign judges") {
-    val round = new AbstractRound(90)
-      //assert(false)
+    val round = new AbstractRound(30)
+    assert(round.judgingAssignment.map(_.toSet) === List(Set(1, 2), Set(2, 0), Set(0, 1)))
+  }
+
+  test("Round: assign judges (rev)") {
+    val round = new AbstractRound(30)
+    assert(round.revJudgingAssignment.map(_.toSet) === List(Set(1, 2), Set(2, 0), Set(0, 1)))
+  }
+
+  test("Round: assign judges: 2 groups") {
+    val round = new AbstractRound(20)
+    assert(round.judgingAssignment.map(_.toSet) === List(Set(1), Set(0)))
+  }
+
+  test("Round: assign judges: 2 groups (rev)") {
+    val round = new AbstractRound(20)
+    assert(round.judgingAssignment.map(_.toSet) === List(Set(1), Set(0)))
   }
 }

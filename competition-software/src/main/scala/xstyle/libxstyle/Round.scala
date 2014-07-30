@@ -36,7 +36,7 @@ class AbstractRound(val competitorCount:Int) {
 
   def groupCount = divCeil(competitorCount, maxGroupSize)
   def runCount = competitorCount
-  
+
   def isFinalRound = groupCount == 1
 
   def freePlaces = maxGroupSize - (competitorCount % maxGroupSize)
@@ -57,8 +57,12 @@ class AbstractRound(val competitorCount:Int) {
     AbstractRound(groupCount * advancingRiderCount)
   }
 
- def judgingAssignment = maxDistancePairJudgingSlidingRotate(0 until groupCount)
-  
+ def judgingAssignment = groupCount match {
+   case 2 => List(List(1), List(0))
+   case _ => maxDistancePairJudgingSlidingRotate(0 until groupCount)
+ }
+ def revJudgingAssignment = (0 until groupCount).map(gi => judgingAssignment.zipWithIndex.flatMap{case (g,i) if g contains gi => Some(i); case _ => None})
+
   //def canBeRunInParallel = competitorCount >= (judgingGroupShift + 1) * 2
 
   def totalRoundCount:Int = 1 + (if( groupCount > 1 ) next.totalRoundCount else 0)

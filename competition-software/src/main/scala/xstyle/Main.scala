@@ -22,7 +22,8 @@ object Main extends App {//SimpleSwingApplication {
     println()
   }
 
-  println(s"judging:\n${round.judgingAssignment.zipWithIndex.map{case (judges,group) => s"  Group ${group+1} judged by groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n")
+  println(s"Judging:\n${round.revJudgingAssignment.zipWithIndex.map{case (judges,group) => s"  Group ${group+1} judging groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n")
+  println(s"${round.judgingAssignment.zipWithIndex.map{case (judges,group) => s"  Group ${group+1} judged by groups ${judges.map(_+1).mkString(",")}"}.mkString("\n")}\n")
 
 
 
