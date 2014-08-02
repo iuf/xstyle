@@ -2,6 +2,14 @@
 Competitors only care about skills.
 The system finds at least the best 3 riders.
 
+## Definitions
+
+__Unicycle Skill__: The main action of a movement is done on and with the unicycle.
+
+_Example 1_: If you do a handstand, while the unicycle is laying on the floor, this is a non unicycle trick, because the main action is the handstand.
+
+_Example 2_: If you do a handstand on the unicycle, while it is standing upside down, this is a unicycle trick, because the main action is balancing the unicycle while doing the handstand.
+
 ## Runs
 Every competitor has a 2 minute run.
 The rider shows his/her skills during this time.
@@ -26,6 +34,12 @@ If there is a tie on one of the first 3 places which extends to more than the 3 
 This pool again gets split into starting groups and the next round begins.
 The final round consists of only one starting group.
 In the final round the best 3 riders are awarded for the first, second and third place of the competition.
+
+### Ties
+If the competition doesn't allow ties (e.g. Unicon), the tied placed riders of the final round will be given another run.
+The run will be one minute.
+The judges bring all tied riders in order.
+If there is still a tie between riders, the tie rules will be applied again, until all ties are resolved.
 
 ## Judges
 The Chief Judge composes the Judging Table for each starting group.
@@ -64,6 +78,10 @@ Every judge can use blank sheets of paper to take notes.
 The highest and the lowest placing points per rider are discarded.
 All the remaining placing points get summed up for each rider.
 The 3 riders with the fewest points win and advance to the next round.
+
+## Publishing Results
+
+The published results contain the riders total ranking in order with their summed placing points and the name(s) of the judges with their ranking for each rider.
 
 ## Latest Rules
 The latest version can be found here: https://github.com/iuf/xstyle/blob/master/rules.md
