@@ -47,7 +47,7 @@ All judges can be active competitors or non-competitors.
 Preferred are people with judging experience and competitors.
 Non-Competitors can apply for being a judge by contacting the Chief Judge in advance.
 The Chief Judge sets the application deadline.
-It is recommended that every starting group gets judged by another starting group.
+It is recommended that every starting group is judged by two other starting groups.
 The judging table consists of at least 5 Judges.
 
 ## Judging
