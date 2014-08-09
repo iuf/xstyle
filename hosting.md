@@ -32,13 +32,14 @@ It is recommended to let them stay on the ground or benches around the riding ar
 ## Things to do before each round
 * **Chief Judge:** Nominates judges for each starting group
 * **Chief Judge:** Divide the competitiors into starting groups
-* **Moderator:** Announce competitiors in each group
 * **Moderator:** Name and announce judges for each group
 
 ## Things to do before each starting group
 * **Chief Judge:** Seat the judges
 * **Judges:** Fill in the names of the riders in the ranking forms (if not printed)
 * **Judges:** Announce competitiors of the current starting group
+* **Moderator:** Announce competitiors of current group
+* **Moderator:** Announce judges of current group
 
 ## Things to do before each run
 * The Rider can request a timing notice from the DJ.
