@@ -36,8 +36,8 @@ It is recommended to let them stay on the ground or benches around the riding ar
 
 ## Things to do before each starting group
 * **Chief Judge:** Seat the judges
+* **Judges:** Fill in their own name(s) in the ranking form
 * **Judges:** Fill in the names of the riders in the ranking forms (if not printed)
-* **Judges:** Announce competitiors of the current starting group
 * **Moderator:** Announce competitiors of current group
 * **Moderator:** Announce judges of current group
 
@@ -56,11 +56,9 @@ It is recommended to let them stay on the ground or benches around the riding ar
 
 ## Things to do after each starting group
 * **Judges:** Write down their rankings in the provided form
-* **Judges:** Fill in their own name(s) in the ranking form
 * **Chief Judge:** collect all ranking forms and hand them over to the evaluation team
 * If possible, the next starting group can begin at this point.
-* **Evaluation team:** calculate ranking scores und write down the advancing riders
-Important: Don't forget to discard the best and worst rank per rider.
+* **Evaluation team:** calculate ranking scores und write down the advancing riders. **Important:** Don't forget to discard the best and worst rank per rider.
 
 ## Things to do after each round
 * **Evaluation team:** Calculate advancing competitors
