@@ -6,7 +6,7 @@ case class Competition(riders: List[Rider]) {
 
   def rider(id: Int) = riderLookup(id)
 
-  def toRound = Round(riders)
+  def toRound = Round(riders, 1)
 }
 
 

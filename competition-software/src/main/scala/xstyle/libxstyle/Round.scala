@@ -3,10 +3,10 @@ package xstyle.libxstyle
 import xstyle.libxstyle.Constants._
 import xstyle.libxstyle.Helpers._
 
-case class Round(riders: List[Rider]) extends AbstractRound(riders.size) {
+case class Round(riders: List[Rider], roundNumber: Int) extends AbstractRound(riders.size, roundNumber) {
   def randomStartingGroups: List[StartingGroup] = {
     def randomRiders = util.Random.shuffle(riders)
-    val abstractRound = AbstractRound(riders.size)
+    val abstractRound = AbstractRound(riders.size, roundNumber)
     //TODO: StartingGroups sorted by age
     var ridersLeft = randomRiders
     var groups: List[StartingGroup] = Nil
@@ -19,22 +19,27 @@ case class Round(riders: List[Rider]) extends AbstractRound(riders.size) {
     groups
   }
 
-  override def toString = s"Round(${riders.size} riders, $groupCount groups)"
+  override def toString = s"Round($roundNumber: ${riders.size} riders, $groupCount groups)"
 }
 
 object AbstractRound {
-  def apply(n: Int) = new AbstractRound(n)
+  def apply(n: Int, roundNumber: Int) = new AbstractRound(n, roundNumber)
 }
 
-class AbstractRound(val competitorCount: Int) {
+class AbstractRound(val competitorCount: Int, roundNumber: Int) {
   require(advancingRiderCount <= maxGroupSize / 2)
   require(competitorCount >= advancingRiderCount, s"Not enough competitors. Need at least $advancingRiderCount.")
+  require(roundNumber > 0)
 
   def groupCount = divCeil(competitorCount, maxGroupSize)
 
   def runCount = competitorCount
 
+  def isFirstRound = roundNumber == 1
+
   def isFinalRound = groupCount == 1
+
+  def isIntermediateRound = !(isFirstRound || isFinalRound)
 
   def freePlaces = maxGroupSize - (competitorCount % maxGroupSize)
 
@@ -54,7 +59,7 @@ class AbstractRound(val competitorCount: Int) {
 
   def next = {
     require(groupSizes.forall(_ >= advancingRiderCount))
-    AbstractRound(groupCount * advancingRiderCount)
+    AbstractRound(groupCount * advancingRiderCount, roundNumber + 1)
   }
 
   def judgingAssignment = groupCount match {
@@ -75,9 +80,9 @@ class AbstractRound(val competitorCount: Int) {
   def totalTimeNeeded = timePerCompetition +
     timePerRound * totalRoundCount +
     timePerGroup * totalGroupCount +
-    timePerRun * totalRunCount
+    timePerRun(this) * totalRunCount
 
   def timeNeeded = timePerRound +
     timePerGroup * groupCount +
-    timePerRun * runCount
+    timePerRun(this) * runCount
 }

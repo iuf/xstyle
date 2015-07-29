@@ -21,7 +21,7 @@ case class StartingGroup(id: Int, riders: List[Rider]) {
       for (placement <- sheet.placements)
         scores(placement.rider) += placement.rank
 
-    var advancing = scores.toList.sortBy(_._2).take(advancingRiderCount)
+    val advancing = scores.toList.sortBy(_._2).take(advancingRiderCount)
     val ties = scores.toList.filter(advancing.map(_._2) contains _._2)
     (advancing ::: ties).map(_._1)
   }
