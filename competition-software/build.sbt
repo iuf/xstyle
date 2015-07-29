@@ -2,7 +2,7 @@ name := "xstyle"
 
 version := "0.1"
 
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.1.7" % "test"
@@ -22,9 +22,6 @@ scalacOptions ++= Seq(
   "-Xlint"
   //,"-Xdisable-assertions", "-optimise"
 )
-
-// faster incremental compilation
-incOptions := incOptions.value.withNameHashing(true)
 
 initialCommands in console := """
 import xstyle.libxstyle.Helpers._
