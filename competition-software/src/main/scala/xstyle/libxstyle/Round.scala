@@ -3,7 +3,9 @@ package xstyle.libxstyle
 import xstyle.libxstyle.Constants._
 import xstyle.libxstyle.Helpers._
 
-case class Round(riders: List[Rider], roundNumber: Int) extends AbstractRound(riders.size, roundNumber) {
+import scala.concurrent.duration.{Duration, FiniteDuration}
+
+case class Round(riders: List[Rider], override val roundNumber: Int = 1) extends AbstractRound(riders.size, roundNumber) {
   def randomStartingGroups: List[StartingGroup] = {
     def randomRiders = util.Random.shuffle(riders)
     val abstractRound = AbstractRound(riders.size, roundNumber)
@@ -23,10 +25,10 @@ case class Round(riders: List[Rider], roundNumber: Int) extends AbstractRound(ri
 }
 
 object AbstractRound {
-  def apply(n: Int, roundNumber: Int) = new AbstractRound(n, roundNumber)
+  def apply(n: Int, roundNumber: Int = 1) = new AbstractRound(n, roundNumber)
 }
 
-class AbstractRound(val competitorCount: Int, roundNumber: Int) {
+class AbstractRound(val competitorCount: Int, val roundNumber: Int = 1) {
   require(advancingRiderCount <= maxGroupSize / 2)
   require(competitorCount >= advancingRiderCount, s"Not enough competitors. Need at least $advancingRiderCount.")
   require(roundNumber > 0)
@@ -73,14 +75,16 @@ class AbstractRound(val competitorCount: Int, roundNumber: Int) {
 
   def totalRoundCount: Int = 1 + (if (groupCount > 1) next.totalRoundCount else 0)
 
-  def totalRunCount: Int = competitorCount + (if (groupCount > 1) next.totalRunCount else 0)
+  def totalRunCount: Int = runCount + (if (groupCount > 1) next.totalRunCount else 0)
 
   def totalGroupCount: Int = groupCount + (if (groupCount > 1) next.totalGroupCount else 0)
+
+  def totalRunTime: FiniteDuration = runCount * timePerRun(this) + (if (groupCount > 1) next.totalRunTime else Duration.Zero)
 
   def totalTimeNeeded = timePerCompetition +
     timePerRound * totalRoundCount +
     timePerGroup * totalGroupCount +
-    timePerRun(this) * totalRunCount
+    totalRunTime
 
   def timeNeeded = timePerRound +
     timePerGroup * groupCount +

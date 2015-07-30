@@ -12,7 +12,7 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
 
   def prettyDuration(d: Duration) = (if (d.toHours > 0) s"${d.toHours}h " else "") + s"${(d - Duration(d.toHours, HOURS)).toMinutes}min"
 
-  val initialRound = AbstractRound(competitorCount, 1)
+  val initialRound = AbstractRound(competitorCount)
 
   override def toString = {
     val sb = new mutable.StringBuilder
@@ -25,7 +25,6 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
 
     sb ++= "\n"
     var round = initialRound
-    var roundId = 1
     var time = Duration(0, MINUTES)
     def currentTime = s"[${prettyDuration(time)}]"
 
@@ -33,7 +32,7 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
     while (round.competitorCount > advancingRiderCount) {
       time += timeBeforeRound
 
-      sb ++= s"$currentTime round $roundId\n"
+      sb ++= s"$currentTime round ${round.roundNumber}\n"
       sb ++= s"  competitors: ${round.competitorCount}\n"
       sb ++= s"  groups:      ${round.groupCount}\n"
       sb ++= s"  group sizes: ${occurrences(round.groupSizes).map { case (number, count) => s"${count}x$number riders" }.mkString(", ")}\n"
@@ -58,7 +57,6 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
 
       sb ++= "\n"
       round = round.next
-      roundId += 1
     }
 
     assert(time == initialRound.totalTimeNeeded, s"$time != ${initialRound.totalTimeNeeded}")

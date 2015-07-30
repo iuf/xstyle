@@ -16,7 +16,7 @@ import xstyle.simulation._
 object Main extends App {
   //SimpleSwingApplication {
   val riders = readRiders("riders")
-  val round = Round(riders, 1)
+  val round = Round(riders)
   for (group <- round.randomStartingGroups) {
     println(s"Starting group ${group.id + 1} (judged by groups ${round.judgingAssignment(group.id).map(_ + 1).mkString(",")}):")
     println(group.riders.map(_.name).mkString("  ", "\n  ", ""))
