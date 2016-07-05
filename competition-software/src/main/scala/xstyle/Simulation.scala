@@ -13,19 +13,20 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
   def prettyDuration(d: Duration) = (if (d.toHours > 0) s"${d.toHours}h " else "") + s"${(d - Duration(d.toHours, HOURS)).toMinutes}min"
 
   val initialRound = AbstractRound(competitorCount)
+  val totalRoundCount = initialRound.totalRoundCount
 
   override def toString = {
     val sb = new mutable.StringBuilder
     sb ++= "X-Style competition\n\n"
 
     sb ++= s"competitors:           ${initialRound.competitorCount}\n"
+    sb ++= s"rounds:                ${initialRound.totalRoundCount}\n"
     sb ++= s"total number of runs:  ${initialRound.totalRunCount}\n"
-    sb ++= s"total time needed:     ${prettyDuration(initialRound.totalTimeNeeded)}\n"
-
+    sb ++= s"total time needed:     ${prettyDuration(initialRound.totalTimeNeeded(totalRoundCount))}\n"
 
     sb ++= "\n"
     var round = initialRound
-    var time = Duration(0, MINUTES)
+    var time = 0 minutes
     def currentTime = s"[${prettyDuration(time)}]"
 
     time += timePerCompetition
@@ -33,11 +34,11 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
       time += timeBeforeRound
 
       sb ++= s"$currentTime round ${round.roundNumber}\n"
-      sb ++= s"  run length: ${lengthOfRun(round)}\n"
+      sb ++= s"  run length: ${lengthOfRun(round, initialRound.totalRoundCount)}\n"
       sb ++= s"  competitors: ${round.competitorCount}\n"
       sb ++= s"  groups:      ${round.groupCount}\n"
       sb ++= s"  group sizes: ${occurrences(round.groupSizes).map { case (number, count) => s"${count}x$number riders" }.mkString(", ")}\n"
-      sb ++= s"  total time:  ${prettyDuration(round.timeNeeded)}\n"
+      sb ++= s"  total time:  ${prettyDuration(round.timeNeeded(totalRoundCount))}\n"
       sb ++= s"  judging:\n${round.judgingAssignment.zipWithIndex.map { case (judges, group) => s"    Group ${group + 1} judged by groups ${judges.map(_ + 1).mkString(",")}" }.mkString("\n")}\n"
 
       for ((groupSize, group) <- round.groupSizes zipWithIndex) {
@@ -48,7 +49,7 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
         for (run <- 1 to groupSize) {
           time += timeBeforeRun
           sb ++= s"      $currentTime Run $run\n"
-          time += lengthOfRun(round)
+          time += lengthOfRun(round, totalRoundCount)
           time += timeAfterRun
         }
         time += timeAfterGroup
@@ -60,7 +61,7 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
       round = round.next
     }
 
-    assert(time == initialRound.totalTimeNeeded, s"$time != ${initialRound.totalTimeNeeded}")
+    assert(time == initialRound.totalTimeNeeded(totalRoundCount), s"$time != ${initialRound.totalTimeNeeded(totalRoundCount)}")
 
     sb.result()
   }

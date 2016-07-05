@@ -79,14 +79,14 @@ class AbstractRound(val competitorCount: Int, val roundNumber: Int = 1) {
 
   def totalGroupCount: Int = groupCount + (if (groupCount > 1) next.totalGroupCount else 0)
 
-  def totalRunTime: FiniteDuration = runCount * timePerRun(this) + (if (groupCount > 1) next.totalRunTime else Duration.Zero)
+  def totalRunTime(totalRoundCount: Int): FiniteDuration = runCount * timePerRun(this, totalRoundCount) + (if (groupCount > 1) next.totalRunTime(totalRoundCount) else Duration.Zero)
 
-  def totalTimeNeeded = timePerCompetition +
+  def totalTimeNeeded(totalRoundCount: Int) = timePerCompetition +
     timePerRound * totalRoundCount +
     timePerGroup * totalGroupCount +
-    totalRunTime
+    totalRunTime(totalRoundCount)
 
-  def timeNeeded = timePerRound +
+  def timeNeeded(totalRoundCount: Int) = timePerRound +
     timePerGroup * groupCount +
-    timePerRun(this) * runCount
+    timePerRun(this, totalRoundCount) * runCount
 }
