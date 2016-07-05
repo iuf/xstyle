@@ -17,8 +17,6 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
 
   override def toString = {
     val sb = new mutable.StringBuilder
-    sb ++= "X-Style competition\n\n"
-
     sb ++= s"competitors:           ${initialRound.competitorCount}\n"
     sb ++= s"rounds:                ${initialRound.totalRoundCount}\n"
     sb ++= s"total number of runs:  ${initialRound.totalRunCount}\n"

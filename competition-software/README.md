@@ -1,28 +1,81 @@
 ## libxstyle and competition simulation
 
-To run, install **Simple build tool** and execute **$ sbt run**.
+To run, install `Simple build tool` and execute `$ sbt run`.
+This reads riders from the file `riders`.
+
+To read from another file, use `$ sbt "run riders-female-junior"`.
+You can also pass multiple files: `$ sbt "run riders-male riders-female"`
 
 ## Sample simulation output
-    X-Style competition
+```
+----- file: riders-female-junior -----
 
-    competitors:           70
-    total number of runs:  100
-    total time needed:     9h 5min
+Starting group 1 (judged by groups 2):
+  641 Linda Unz
+  844 Antonia Joschko
+  147 Henriette Höhne
+  686 Svenja Stronzik
+  640 Saskia Unz
+  197 Julia Pfannenstein
 
-    round 1
-      competitors: 70
-      groups:      7
-      groupSizes:  7x10 riders
-      time:        5h 35min
+Starting group 2 (judged by groups 1):
+  1351 Anna Plininger
+  851 Emily Abendschön
+  709 Emma Neumann
+  908 Kim-Lilien Hoeser
+  518 Aoi Uchida
 
-    round 2
-      competitors: 21
-      groups:      3
-      groupSizes:  3x7 riders
-      time:        2h 8min
+Judging:
+  Group 1 judging groups 2
+  Group 2 judging groups 1
 
-    round 3
-      competitors: 9
-      groups:      1
-      groupSizes:  1x9 riders
-      time:        1h 2min
+  Group 1 judged by groups 2
+  Group 2 judged by groups 1
+
+competitors:           11
+rounds:                2
+total number of runs:  17
+total time needed:     2h 25min
+
+[10min] round 1
+  run length:  90 seconds
+  competitors: 11
+  groups:      2
+  group sizes: 1x5 riders, 1x6 riders
+  total time:  1h 12min
+  judging:
+    Group 1 judged by groups 2
+    Group 2 judged by groups 1
+    [15min] Starting Group 1 (6 riders)
+      Judges: Groups 2
+      [15min] Run 1
+      [17min] Run 2
+      [20min] Run 3
+      [22min] Run 4
+      [25min] Run 5
+      [27min] Run 6
+    [40min] Starting Group 2 (5 riders)
+      Judges: Groups 1
+      [40min] Run 1
+      [42min] Run 2
+      [45min] Run 3
+      [47min] Run 4
+      [50min] Run 5
+
+[1h 22min] round 2 (Finals)
+  run length:  2 minutes
+  competitors: 6
+  groups:      1
+  group sizes: 1x6 riders
+  total time:  53min
+  judging:
+    Group 1 judged by groups 1,1
+    [1h 27min] Starting Group 1 (6 riders)
+      Judges: Groups 1,1
+      [1h 27min] Run 1
+      [1h 30min] Run 2
+      [1h 33min] Run 3
+      [1h 36min] Run 4
+      [1h 39min] Run 5
+      [1h 42min] Run 6
+```

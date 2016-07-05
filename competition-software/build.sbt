@@ -2,25 +2,21 @@ name := "xstyle"
 
 version := "0.1"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
-libraryDependencies ++= Seq(
-  "org.scalatest" %% "scalatest" % "2.1.7" % "test"
-  //"org.scala-lang" % "scala-swing" % "2.10.4"
+libraryDependencies ++= (
+  "org.scalatest" %% "scalatest" % "2.1.7" % "test" ::
+  Nil
 )
 
-//resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
-
-//libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.0.0-SNAPSHOT"
-
 scalacOptions ++= Seq(
-  "-unchecked", 
-  "-deprecation", 
-  "-feature", 
+  "-unchecked",
+  "-deprecation",
+  "-feature",
   "-Yinline", "-Yinline-warnings",
   "-language:_",
   "-Xlint"
-  //,"-Xdisable-assertions", "-optimise"
+//,"-Xdisable-assertions", "-optimise"
 )
 
 initialCommands in console := """
