@@ -9,7 +9,8 @@
 
 ## Tools needed
 * Blank paper, pens
-* Calculator (for evaluation Team)
+* Calculator (for evaluation Team) or Laptop with prepared (spreadsheet)[evaluation.ods].
+* Printer for results
 * Printed forms (ranking)
 * Sound System, music
 * Judging Table, Chairs
