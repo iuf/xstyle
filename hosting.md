@@ -9,7 +9,7 @@
 
 ## Tools needed
 * Blank paper, pens
-* Calculator (for evaluation Team) or Laptop with prepared (spreadsheet)[evaluation.ods].
+* Calculator (for evaluation Team) or Laptop with prepared [evaluation spreadsheet](https://github.com/iuf/xstyle/raw/master/evaluation.ods).
 * Printer for results
 * Printed forms (ranking)
 * Sound System, music
