@@ -3,10 +3,22 @@ package xstyle.libxstyle
 import scala.concurrent.duration._
 
 object Constants {
-  val timeBeforeCompetition = Duration(0, MINUTES)
-  val timeBeforeRound = Duration(10, MINUTES)
-  val timeBeforeGroup = Duration(5, MINUTES)
-  val timeBeforeRun = Duration(0, MINUTES)
+  val timeBeforeCompetition = 0 minutes
+  val timeBeforeRound = 10 minutes
+  val timeBeforeGroup = 5 minutes
+  val timeBeforeRun = 0 minutes
+
+  val timeAfterRun = 1 minutes
+  val timeAfterGroup = 5 minutes
+  val timeAfterRound = 15 minutes
+  val timeAfterCompetition = 20 minutes
+
+  val timePerCompetition = timeBeforeCompetition + timeAfterCompetition
+  val timePerRound = timeBeforeRound + timeAfterRound
+  val timePerGroup = timeBeforeGroup + timeAfterGroup
+  def timePerRun(currentRound: AbstractRound, totalRoundCount: Int) = {
+    timeBeforeRun + lengthOfRun(currentRound, totalRoundCount) + timeAfterRun
+  }
 
   def lengthOfRun(currentRound: AbstractRound, totalRoundCount: Int) = {
     if (totalRoundCount >= 3) currentRound match {
@@ -21,18 +33,6 @@ object Constants {
     else { // totalRoundCount == 1
       2 minutes
     }
-  }
-
-  val timeAfterRun = Duration(1, MINUTES)
-  val timeAfterGroup = Duration(5, MINUTES)
-  val timeAfterRound = Duration(15, MINUTES)
-  val timeAfterCompetition = Duration(20, MINUTES)
-
-  val timePerCompetition = timeBeforeCompetition + timeAfterCompetition
-  val timePerRound = timeBeforeRound + timeAfterRound
-  val timePerGroup = timeBeforeGroup + timeAfterGroup
-  def timePerRun(currentRound: AbstractRound, totalRoundCount: Int) = {
-    timeBeforeRun + lengthOfRun(currentRound, totalRoundCount) + timeAfterRun
   }
 
   val maxGroupSize = 10

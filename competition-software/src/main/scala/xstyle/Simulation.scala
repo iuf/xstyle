@@ -29,7 +29,7 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
     var time = 0 minutes
     def currentTime = s"[${prettyDuration(time)}]"
 
-    time += timePerCompetition
+    time += timeBeforeCompetition
     while (round.competitorCount > advancingRiderCount) {
       time += timeBeforeRound
 
@@ -60,6 +60,7 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
       sb ++= "\n"
       round = round.next
     }
+    time += timeAfterCompetition
 
     assert(time == initialRound.totalTimeNeeded(totalRoundCount), s"$time != ${initialRound.totalTimeNeeded(totalRoundCount)}")
 
