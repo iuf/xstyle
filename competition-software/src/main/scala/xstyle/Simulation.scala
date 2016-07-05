@@ -33,8 +33,8 @@ class Simulation(competitorCount: Int, parallel: Boolean = true) {
     while (round.competitorCount > advancingRiderCount) {
       time += timeBeforeRound
 
-      sb ++= s"$currentTime round ${round.roundNumber}\n"
-      sb ++= s"  run length: ${lengthOfRun(round, initialRound.totalRoundCount)}\n"
+      sb ++= s"$currentTime round ${round.roundNumber}" + (if (round.isFinalRound) " (Finals)" else "") + "\n"
+      sb ++= s"  run length:  ${lengthOfRun(round, initialRound.totalRoundCount)}\n"
       sb ++= s"  competitors: ${round.competitorCount}\n"
       sb ++= s"  groups:      ${round.groupCount}\n"
       sb ++= s"  group sizes: ${occurrences(round.groupSizes).map { case (number, count) => s"${count}x$number riders" }.mkString(", ")}\n"
